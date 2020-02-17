@@ -24,5 +24,5 @@ ansible-playbook hashivault.yml
 #### Accessing Vault
 
 By default we use http port 8000 on your Ansible control node, and listen on all interfaces.
-We've installed the Vault UI which will be available on http://public_ip:8000/ui
+We've installed the Vault UI which will be available on something like: http://student3.08b5.rhdemo.io:8000/ui/
 
