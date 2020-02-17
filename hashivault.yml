@@ -1,0 +1,16 @@
+---
+- hosts: control
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  vars:
+    protocol: "http"
+    vault_ip: "0.0.0.0"
+    vault_port: "8000"
+    unseal_keys_dir_output: "{{ playbook_dir }}/unsealKey"
+    root_token_dir_output: "{{ playbook_dir }}/rootKey"
+    
+  roles:
+    - { role: vault-install, tags: install }
+    - { role: vault-config, tags: config }

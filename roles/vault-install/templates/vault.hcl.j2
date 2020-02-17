@@ -1,0 +1,10 @@
+storage "file" {
+  path = "/tmp/vault"
+}
+
+ui = true
+
+listener "tcp" {
+	address     = "{{ vault_ip }}:{{ vault_port}}"
+	tls_disable =  true
+}

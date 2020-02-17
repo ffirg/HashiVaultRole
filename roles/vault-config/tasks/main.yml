@@ -1,0 +1,3 @@
+---
+- include: vault-init.yml
+- include: vault-unseal.yml
