@@ -2,7 +2,7 @@
 
 Heavily based on the excellent work done by https://github.com/MiteshSharma/AnsibleVaultRole (many thanks!)
 
-This Ansile Role for Hashicorp Vault will download/install/config an initial Vault. 
+This Ansible Role for Hashicorp Vault will download/install/configure an initial Vault. 
 
 It is designed to be used during Ansible Workshops so we can demonstrate the integration with Ansible Tower.
 
