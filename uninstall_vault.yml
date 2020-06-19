@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+  - name: stop vault service
+    command: 'systemctl stop vault.service'
+
+  - name: delete vault binary
+    file: 
+      path: /usr/local/bin/vault
+      state: absent
+
+  - name: delete systemctl file
+    file: 
+      path: /etc/systemd/system/vault.service
+      state: absent
+
+  - name: delete tmp files
+    file: 
+      path: /tmp/vault
+      state: absent
+
+  - name: remove rootkey
+    file:
+      path: /home/student15/HashiVaultRole/rootKey
+      state: absent
+
+  - name: remove seal key
+    file:
+      path: /home/student15/HashiVaultRole/unsealKey
+      state: absent
+
+  - name: reload systemctl daemon
+    command: 'systemctl daemon-reload'
+
