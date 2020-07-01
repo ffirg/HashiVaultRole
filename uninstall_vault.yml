@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   become: yes
+  ignore_errors: yes
 
   tasks:
   - name: stop vault service
