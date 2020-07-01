@@ -15,6 +15,9 @@
     file: 
       path: /etc/systemd/system/vault.service
       state: absent
+ 
+  - name: reload systemctl daemon
+    command: 'systemctl daemon-reload'
 
   - name: delete tmp files
     file: 
@@ -23,14 +26,12 @@
 
   - name: remove rootkey
     file:
-      path: /home/student15/HashiVaultRole/rootKey
+      path: rootKey
       state: absent
 
   - name: remove seal key
     file:
-      path: /home/student15/HashiVaultRole/unsealKey
+      path: unsealKey
       state: absent
 
-  - name: reload systemctl daemon
-    command: 'systemctl daemon-reload'
 
